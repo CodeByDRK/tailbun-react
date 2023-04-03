@@ -1,13 +1,808 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nothing{
+  display: none;
+}
+
+
+/* ................HEADER REGION....................*/
+.navbar{
+  z-index: 10;
+  width: 100%;
+  height: 100px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+}
+
+.navbar li{
+  color: white;
+  list-style: none;
+}
+
+
+.logo{
+  position: absolute;
+  width: 190px;
+  left: 10%;
+}
+
+.logo img{
+  width: 100%;
+  height: auto;
+}
+
+.nav-links{
+  font-family: poppinsRegular;
+  font-size: 20px;
+  display: flex;
+  gap: 70px;
+}
+
+.nav-links li{
+  color: white;
+  list-style: none;
+}
+
+.nav-link-link{
+  color: white;
+  text-decoration: none;
+  font-family: poppinsRegular;
+  font-size: 19px;
+}
+
+.shopping-cart{
+  position: absolute;
+  right: 10%;
+}
+.user-icon{
+  position: absolute;
+  right: 5%;
+}
+
+.shopping-cart, .user-icon{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.shopping-cart img, .user-icon img{
+  width: 100%;
+}
+
+.sign-in-options{
+  position: absolute;
+  right: 0px;
+  background: #000;
+  border: 1px yellow;
+  top: 100px;
+  width: 270px;
+}
+
+.sign-in-options button{
+  width: 100%;
+  color: white;
+  text-align: center;
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 15px;
+  font-family: poppinsRegular;
+  font-size: 19px;
+}
+
+.mobile-navbar{
+display: none;
+}
+
+        /*......RESPONSIVE HEADER...........*/
+        @media screen and (max-width:920px) {
+          .logo{
+            position: absolute;
+            width: 170px;
+            left: 5%;
+          }
+          .shopping-cart{
+            position: absolute;
+            right: 10%;
+          }
+          .user-icon{
+            position: absolute;
+            right: 2%;
+          }
+        }
+        @media screen and (max-width:790px) {
+          .navbar{
+            display: none;
+          }
+
+          .mobile-navbar{
+            width: 100%;
+            height: 100px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+          }
+
+          .logo{
+            position: absolute;
+            width: 130px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+          
+          .nav-links{
+            position: absolute;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            background-color: #000;
+            right: 0;
+            top: 100px;
+            width: 200px;
+            height: 250px;
+            align-items: flex-end;
+            gap: 0px;
+            z-index: 2;
+          }
+          
+          .nav-links li{
+            text-align: center;
+            width: 100%;
+            cursor: pointer;
+            color: white;
+            list-style: none;
+            padding: 25px 35px;
+          }
+          .nav-links li:hover{
+            background-color: #2F2F2F;
+          }
+          
+          .nav-link-link{
+            color: white;
+            text-decoration: none;
+            font-family: poppinsRegular;
+            font-size: 19px;
+          }
+          
+          .shopping-cart{
+            position: absolute;
+            left: 5%;
+          }
+          .user-icon{
+            position: absolute;
+            right: 5%;
+          }
+          
+          .shopping-cart, .user-icon{
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+          }
+          .shopping-cart img, .user-icon img{
+            width: 100%;
+          }
+          .sign-in-options{
+            position: absolute;
+            right: 0px;
+            background: #000;
+            border: 1px yellow;
+            top: 334px;
+            width: 200px;
+            z-index: 2;
+          }
+          
+          .sign-in-options button{
+            width: 100%;
+            color: white;
+            text-align: center;
+            background: transparent;
+            outline: none;
+            border: none;
+            padding: 25px 35px;
+            font-family: poppinsRegular;
+            font-size: 19px;
+          }
+        }
+
+/*............END OF HEADER.............*/
+
+/*................FOOTER.................*/
+.footer{
+  background-color: #000;
+  display: flex;
+  padding: 5% 8% 10%;
+  position: relative;
+}
+
+.footer h4{
+  font-size: 20px;
+  font-family: poppinsMedium;
+}
+
+.left-footer{
+  display: flex;
+  flex: 1;
+}
+.right-footer{
+  display: flex;
+  flex: 1;
+  text-align: right;
+}
+
+.footer-column{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.footer-link{
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 15;
+  font-family: poppinsRegular;
+}
+.footer-column p{
+  color: #fff;
+  font-size: 15;
+  font-family: poppinsRegular;
+}
+
+.right-footer .footer-column p{
+  text-align: right;
+}
+
+.footer-logo{
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  transform: translateX(-50%);
+}
+
+
+        /*................RESPONSIVE FOOTER..........*/
+        @media screen and (max-width:1099px) {
+          .footer-logo{
+            bottom: 10%;
+          }
+          .footer{
+            background-color: #000;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 5% 8% 13%;
+            position: relative;
+          }
+          
+          .footer h4{
+            font-size: 18px;
+            font-family: poppinsMedium;
+          }
+          
+          .footer-link{
+            font-size: 14;
+          }
+          .footer-column p{
+            font-size: 14;
+          }
+        }
+
+        @media screen and (max-width: 800px) {
+          .footer{
+            padding: 5% 8% 18%;
+            gap: 10px;
+          }
+          
+          .footer h4{
+            font-size: 18px;
+          }
+          
+          .left-footer{
+            flex-wrap: wrap;
+            flex: 100%;
+          }
+          .right-footer{
+            flex-wrap: wrap;
+            flex: 100%;
+            text-align: left;
+          }
+          
+          .footer-column{
+            flex: 1;
+          }
+          
+          .footer-link{
+            font-size: 15;
+          }
+          .footer-column p{
+            font-size: 15;
+          }
+          
+          .right-footer .footer-column p{
+            text-align: left;
+          }
+          .footer-logo{
+            bottom: 6%;
+          }
+        }
+        @media screen and (max-width: 425px) {
+          .footer{
+            padding: 5% 8% 21%;
+            gap: 30px;
+          }
+          
+          .footer h4{
+            font-size: 18px;
+          }
+          
+          .left-footer{
+            flex-wrap: wrap;
+            flex: 100%;
+            text-align: center;
+          }
+          .right-footer{
+            text-align: center;
+            flex-wrap: wrap;
+            flex: 100%;
+            text-align: left;
+          }
+          
+          .footer-column{
+            flex: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+          }
+          
+          .footer-link{
+            font-size: 15;
+            justify-content: center;
+          }
+          .footer-column p{
+            font-size: 15;
+            text-align: center;
+          }
+          
+          .right-footer .footer-column p{
+            text-align: center;
+          }
+          .footer-logo{
+            bottom: 4%;
+          }
+        }
+
+/*................END OF FOOTER.................*/
+
+
+
+
+
+
+/*............LANDING SCREEN.............*/
+.landing-screen{
+  background-image: url(./img/landing-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.landing-intro{
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  color: white;
+  font-family: ropaSans;
+  font-weight: 400;
+}
+
+h3{
+  font-family: ropaSans;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 77.5%;
+  color: #FFC400;
+  letter-spacing: 0.16em;
+}
+
+.underline{
+  background-color: #FF6347;
+  width: 140px;
+  height: 12px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.landing-intro > p:nth-child(3), .landing-intro > p:nth-child(4){
+  font-style: normal;
+  font-weight: 400;
+  font-size: 90px;
+  line-height: 77.5%;
+}
+
+.landing-intro > p:nth-child(5) {
+  font-size: 26px;
+  line-height: 77.5%;
+}
+
+.landing-buttons-container{
+  position: absolute;
+  top: 64%;
+  left: 15%;
+  display: flex;
+  gap: 50px;
+}
+
+.btn-one, .btn-two{
+  width: 170px;
+  padding: 30px 31px;
+  font-size: 19px;
+  font-family: poppinsRegular;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: .5s ease-in-out;
+}
+
+.btn-one{
+  color: #E1AD01;
+  border: solid 1px #E1AD01;
+}
+.btn-two{
+  color: #fff;
+  border: solid 1px #fff;
+}
+
+.btn-one:hover{
+  border: solid 1px #fff;
+  background-color: #fff;  
+}
+.btn-two:hover{
+  background-color: #E1AD01; 
+  border: solid 1px #E1AD01;
+}
+
+        /*...........LANDING SCREEN RESPONSIVE.............*/
+        @media screen and (max-width:750px) {
+          .landing-screen{
+            background-image: url(./img/landing-bg-1024.png);
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+          }
+
+          .landing-intro{
+            position: absolute;
+            top: 28%;
+            left: 11%;
+          }
+          
+          .landing-intro h3{
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 77.5%;
+            color: #FFC400;
+            letter-spacing: 0.16em;
+          }
+          
+          .landing-intro > p:nth-child(3), .landing-intro > p:nth-child(4){
+            font-style: normal;
+            font-weight: 400;
+            font-size: 80px;
+            line-height: 77.5%;
+          }
+          
+          .landing-intro > p:nth-child(5) {
+            font-size: 20px;
+            line-height: 77.5%;
+          }
+          
+          .landing-buttons-container{
+            position: absolute;
+            top: 64%;
+            left: 15%;
+            display: flex;
+            gap: 50px;
+          }
+          
+          .btn-one, .btn-two{
+            width: 140px;
+            padding: 28px 0px;
+            font-size: 17px;
+          }
+        }
+        @media screen and (max-width:505px) {
+          .landing-intro{
+            position: absolute;
+            top: 20%;
+            left: 6%;
+          }
+          
+          .landing-intro h3{
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 77.5%;
+            color: #FFC400;
+            letter-spacing: 0.16em;
+          }
+          
+          .landing-intro > p:nth-child(3), .landing-intro > p:nth-child(4){
+            font-style: normal;
+            font-weight: 400;
+            font-size: 80px;
+            line-height: 77.5%;
+          }
+          
+          .landing-intro > p:nth-child(5) {
+            font-size: 20px;
+            line-height: 77.5%;
+          }
+          
+          .landing-buttons-container{
+            position: absolute;
+            top: 70%;
+            left: 6%;
+            display: flex;
+            gap: 40px;
+          }
+          
+          .btn-one, .btn-two{
+            width: 140px;
+            padding: 28px 0px;
+            font-size: 17px;
+          }
+        }
+
+/*................MENU PAGE..............*/
+.content-page{
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #000;
+}
+
+.page-banner{
+  width: 100%;
+  background-image: url(./img/banner-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 176px;
+  font-size: 100px;
+  font-family: ropaSans;
+}
+
+.menu-container{
+  margin-top: 65px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.menu-item{
+  width: 270px;
+  background-color: #1F1F1F;
+  padding-bottom: 20px;
+}
+
+.menu-item:hover img{
+  scale: 1.1;
+}
+
+.menu-item img{
+  width: 100%;
+  height: 186px;
+  object-position: center;
+  transition: .5s ease-in-out;
+}
+
+.menu-item-details{
+  width: 100%;
+  background: transparent;
+  padding-left: 25px;
+}
+
+.item-title{
+  color: #fff;
+  font-size: 21px;
+  font-family: poppinsMedium;
+}
+.item-ingredients{
+  color: #9A9A9A;
+  font-size: 10px;
+  font-family: poppinsLight;
+  margin-bottom: 15px;
+}
+.item-price{
+  color: #FF6347;
+  font-size: 20px;
+  font-family: poppinsMedium;
+  margin-bottom: 22px;
+}
+.add-cart-btn{
+  font-size: 13px;
+  font-family: poppinsRegular;
+  padding: 5px 19px;
+  border: none;
+  background-color: #E1AD01;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*......................ABOUT PAGE................*/
+.about-container{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  font-family: poppinsLight;
+  font-size: 19px;
+}
+
+.about-content{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-image{
+  width: 45%;
+}
+
+.about-image img{
+  width: 100%;
+}
+
+.about-content > div:nth-child(2) h3{
+  font-size: 23px;
+}
+.about-content > div:nth-child(2) .underline{
+  font-size: 23px;
+  height: 8px;
+}
+
+.specialties{
+  max-width: 220px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.specialties p{
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width:790px) {
+  .about-container{
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    width: 90%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    font-family: poppinsLight;
+    font-size: 16px;
+  }
+
+  .about-content{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-image{
+    width: 60%;
+  }
+  
+  .about-image img{
+    width: 100%;
+  }
+}
+
+
+/*...................CONTACT PAGE.............*/
+.contact-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-contact{
+  width: 50%;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-family: poppinsMedium;
+}
+
+.left-contact form{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.left-contact form input{
+  margin-bottom: 55px;
+  height: 55px;
+  border: none;
+  outline: none;
+  font-family: poppinsRegular;
+  font-size: 19px;
+  padding: 5px;
+  width: 100%;
+}
+
+.left-contact form textarea{
+  height: 55px;
+  border: none;
+  outline: none;
+  font-family: poppinsRegular;
+  font-size: 19px;
+  padding: 5px;
+  width: 100%;
+  min-height: 150px;
+}
+
+.right-contact{
+  background-color: #CD913A;
+  width: 50%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 20px;
+  font-family: poppinsSemibold;
+}
+
+.contact-info-text{
+  font-family: poppinsLight;
+  font-size: 15px;
+}
+
+.right-contact div{
+  width: 80%;
+}
+
+.contact-addressing p{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.contact-addressing p img{
+  width: 35px;
 }
